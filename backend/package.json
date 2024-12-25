@@ -1,6 +1,10 @@
 {
+  "name": "To-Do-App",
   "version": "1.0.0",
   "main": "backend/index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.21.2",
