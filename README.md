@@ -120,3 +120,14 @@ This project is open source and available under the MIT License.
 **Built with ❤️ by Sunay Revad**
 
 # Updated at Thu Aug 28 02:10:35 IST 2025
+
+---
+
+## Todo app (from upstream README)
+
+This project contains a simple TODO application
+It has the following features - 
+
+- Anyone can create a todo
+- Anyone can see their existing todos
+- Anyone can mark a todo as done

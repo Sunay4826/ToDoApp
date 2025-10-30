@@ -1,0 +1,106 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000000; /* Black background */
+    margin: 0;
+    padding: 0;
+    color: #ffffff; /* Default text color to white */
+}
+
+/* Container for the App */
+.app {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styles */
+h1 {
+    text-align: center;
+    color: #ffffff; /* White text for header */
+}
+
+/* Create Todo Styles */
+.create-todo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.create-todo input {
+    padding: 10px;
+    margin: 10px;
+    width: 80%;
+    border: 2px solid #ffffff; /* White border */
+    border-radius: 5px;
+    background-color: transparent; /* Transparent background */
+    color: #ffffff; /* White text */
+    font-size: 16px;
+}
+
+.create-todo button {
+    padding: 10px 15px;
+    margin: 10px;
+    border: 2px solid #ffffff; /* White border */
+    border-radius: 5px;
+    background-color: transparent; /* Transparent background */
+    color: #ffffff; /* White text */
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.create-todo button:hover {
+    background-color: #ffffff; /* White background on hover */
+    color: #000000; /* Black text on hover */
+}
+
+/* Todos Styles */
+.todos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.todo-item {
+    background-color: #333333; /* Dark gray background for todo items */
+    border: 2px solid #ffffff; /* White border */
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px 0;
+    width: 80%;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1); /* Subtle shadow for depth */
+}
+
+.todo-item h1, .todo-item h2 {
+    color: #ffffff; /* White text for todo titles and descriptions */
+}
+
+.todo-item button {
+    padding: 10px 15px;
+    border: 2px solid #ffffff; /* White border */
+    border-radius: 5px;
+    background-color: transparent; /* Transparent background */
+    color: #ffffff; /* White text */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.todo-item button:hover {
+    background-color: #ffffff; /* White background on hover */
+    color: #000000; /* Black text on hover */
+}
+
+/* Completed Todo Styles */
+.completed {
+    text-decoration: line-through;
+    color: #aaa; /* Light gray for completed tasks */
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .create-todo input, .create-todo button {
+        width: 100%;
+    }
+}
