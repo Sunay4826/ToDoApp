@@ -12,6 +12,41 @@ export const projects = [
     TechStack: ["React", "Node", "Express", "CSS"],
   },
   {
+    id: "ai-finance-platform",
+    Title: "AI Finance Platform",
+    Description:
+      "AI-powered finance dashboard for account insights, tracking, and analytics.",
+    Img: "/Portfolio-Website/projects/todo-app.png",
+    Link: "https://ai-finance-platform-imp.vercel.app/account/9ad844c9-fd1e-4d56-8c7f-fb14da706fbe",
+    TechStack: ["React", "Vercel"],
+  },
+  {
+    id: "remote-blogging-platform",
+    Title: "Remote Blogging Platform",
+    Description:
+      "Full-stack blogging platform with posts, comments, likes, bookmarks, and tags.",
+    Img: "/Portfolio-Website/projects/ChatGPT Image Feb 8, 2026 at 01_26_08 AM.png",
+    Link: "https://blog-sbyr.vercel.app/blogs",
+    Github: "Private",
+    TechStack: [
+      "React",
+      "Tailwind CSS",
+      "Hono",
+      "Prisma",
+      "PostgreSQL",
+      "Cloudflare Workers",
+      "Vercel",
+    ],
+    Features: [
+      "Create and publish posts with tagging support.",
+      "Engagement features: comments, likes, and bookmarks.",
+      "Responsive UI with a modern, cross-device experience.",
+      "Secure authentication and server-side validation with Hono.",
+      "Prisma + PostgreSQL backend deployed on Cloudflare Workers.",
+      "Frontend deployed on Vercel for fast global delivery.",
+    ],
+  },
+  {
     id: "advanced-pipify",
     Title: "Advanced PiPify - Professional Picture-in-Picture Tool",
     Description:
