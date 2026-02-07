@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(cors());
 
 // MongoDB Connection
-const mongoURI = "mongodb://localhost:27017/"; // Replace with your MongoDB connection string
+const mongoURI = process.env.MONGO_URI || "mongodb://localhost:27017/";
 
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
@@ -101,6 +101,7 @@ app.delete("/todo/:id", async function(req, res) {
 });
 
 // Start the server
-app.listen(3000, () => {
-    console.log("Server is running on port 3000");
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
 });

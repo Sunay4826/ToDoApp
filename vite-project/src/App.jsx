@@ -9,6 +9,7 @@ import { AmbientToggle } from './components/AmbientToggle';
 function App() {
     const CACHE_KEY = "nebula-todos-cache";
     const QUEUE_KEY = "nebula-todos-queue";
+    const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:3000";
 
     const [todos, setTodos] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -65,7 +66,7 @@ function App() {
                 setTodos(cached);
                 return;
             }
-            const response = await fetch("http://localhost:3000/todos");
+            const response = await fetch(`${API_BASE}/todos`);
             const data = await response.json();
             setTodos(data.todos);
             cacheTodos(data.todos);
@@ -143,7 +144,7 @@ function App() {
             return;
         }
 
-        await fetch("http://localhost:3000/todo", {
+        await fetch(`${API_BASE}/todo`, {
             method: "POST",
             body: JSON.stringify(payload),
             headers: { "Content-type": "application/json" }
@@ -177,7 +178,7 @@ function App() {
             return;
         }
 
-        await fetch("http://localhost:3000/completed", {
+        await fetch(`${API_BASE}/completed`, {
             method: "PUT",
             body: JSON.stringify({ id, completed }),
             headers: { "Content-type": "application/json" }
@@ -209,7 +210,7 @@ function App() {
             return;
         }
 
-        await fetch(`http://localhost:3000/todo/${id}`, {
+        await fetch(`${API_BASE}/todo/${id}`, {
             method: "PATCH",
             body: JSON.stringify(update),
             headers: { "Content-type": "application/json" }
@@ -237,7 +238,7 @@ function App() {
             return;
         }
 
-        await fetch(`http://localhost:3000/todo/${id}`, {
+        await fetch(`${API_BASE}/todo/${id}`, {
             method: "DELETE"
         });
         fetchTodos();
@@ -254,7 +255,7 @@ function App() {
         for (const action of queue) {
             try {
                 if (action.type === "create") {
-                    const response = await fetch("http://localhost:3000/todo", {
+                    const response = await fetch(`${API_BASE}/todo`, {
                         method: "POST",
                         body: JSON.stringify(action.payload),
                         headers: { "Content-type": "application/json" }
@@ -266,7 +267,7 @@ function App() {
                 }
                 if (action.type === "update") {
                     const targetId = idMap[action.id] || action.id;
-                    await fetch(`http://localhost:3000/todo/${targetId}`, {
+                    await fetch(`${API_BASE}/todo/${targetId}`, {
                         method: "PATCH",
                         body: JSON.stringify(action.update),
                         headers: { "Content-type": "application/json" }
@@ -274,7 +275,7 @@ function App() {
                 }
                 if (action.type === "toggle") {
                     const targetId = idMap[action.id] || action.id;
-                    await fetch("http://localhost:3000/completed", {
+                    await fetch(`${API_BASE}/completed`, {
                         method: "PUT",
                         body: JSON.stringify({ id: targetId, completed: action.completed }),
                         headers: { "Content-type": "application/json" }
@@ -282,7 +283,7 @@ function App() {
                 }
                 if (action.type === "delete") {
                     const targetId = idMap[action.id] || action.id;
-                    await fetch(`http://localhost:3000/todo/${targetId}`, {
+                    await fetch(`${API_BASE}/todo/${targetId}`, {
                         method: "DELETE"
                     });
                 }
