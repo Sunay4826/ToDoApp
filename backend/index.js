@@ -100,8 +100,11 @@ app.delete("/todo/:id", async function(req, res) {
     res.json({ msg: "Todo deleted" });
 });
 
-// Start the server
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
-});
+module.exports = app;
+
+if (require.main === module) {
+    const port = process.env.PORT || 3000;
+    app.listen(port, () => {
+        console.log(`Server is running on port ${port}`);
+    });
+}
