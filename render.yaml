@@ -9,9 +9,8 @@ services:
       - key: MONGO_URI
         sync: false
 
-  - type: web
+  - type: static
     name: nebula-tasks-web
-    env: static
     rootDir: vite-project
     buildCommand: npm install && npm run build
     staticPublishPath: dist
