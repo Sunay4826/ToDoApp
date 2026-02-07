@@ -1,0 +1,5 @@
+{
+  "installCommand": "cd vite-project && npm install",
+  "buildCommand": "cd vite-project && npm run build",
+  "outputDirectory": "vite-project/dist"
+}
